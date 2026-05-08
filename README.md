@@ -1,16 +1,39 @@
-# React + Vite
+📰 NEWS-TV
+A modern and responsive News Web Application built using React, that allows users to explore real-time news across different categories and countries with a smooth and interactive UI.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features : 
+1. Debounced Search
+Search news topics efficiently without unnecessary API calls
 
-Currently, two official plugins are available:
+3. Country-based News Filtering
+Select news based on country (e.g., USA, India, etc.)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+5. Category-based Navigation
+Browse news by:
+General
+Business
+Technology
+Sports
+Health
 
-## React Compiler
+4. Dark Mode / Light Mode Toggle
+Clean UI experience with theme switching
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+5. Responsive Card Layout
+News displayed in modern card format with:
+Image
+Title
+Description
+Read More link
 
-## Expanding the ESLint configuration
+7. Fast API Integration
+Fetches real-time news dynamically
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Tech Stack : 
+1. React(Vite)
+2. Javascript
+3. Css
+4. Html
+5. News Api
+
+
