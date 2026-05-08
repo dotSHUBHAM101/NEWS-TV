@@ -1,39 +1,65 @@
-📰 NEWS-TV
-A modern and responsive News Web Application built using React, that allows users to explore real-time news across different categories and countries with a smooth and interactive UI.
+# 📰 NEWS-TV
 
-Features : 
-1. Debounced Search
-Search news topics efficiently without unnecessary API calls
+A modern and responsive *News Web Application* built using *React*, allowing users to explore real-time news across multiple categories and countries with a smooth and interactive UI.
 
-3. Country-based News Filtering
-Select news based on country (e.g., USA, India, etc.)
+---
 
-5. Category-based Navigation
-Browse news by:
-General
-Business
-Technology
-Sports
-Health
+## 🚀 Features
 
-4. Dark Mode / Light Mode Toggle
-Clean UI experience with theme switching
+- 🔍 *Debounced Search*  
+  Efficient search without unnecessary API calls  
 
-5. Responsive Card Layout
-News displayed in modern card format with:
-Image
-Title
-Description
-Read More link
+- 🌍 *Country-based Filtering*  
+  View news from different countries (India, USA, etc.)  
 
-7. Fast API Integration
-Fetches real-time news dynamically
+- 🧭 *Category-based Navigation*  
+  Browse by:
+  - General  
+  - Business  
+  - Technology  
+  - Sports  
+  - Health  
 
-Tech Stack : 
-1. React(Vite)
-2. Javascript
-3. Css
-4. Html
-5. News Api
+- 🌙 *Dark / Light Mode*  
+  Toggle between themes for better UX  
 
+- 🧩 *Responsive Card Layout*  
+  Each news item includes:
+  - Image  
+  - Title  
+  - Description  
+  - Read More link  
+
+- ⚡ *Real-time API Integration*  
+  Dynamic data fetching from News API  
+
+---
+
+## 🛠️ Tech Stack
+
+- *React (Vite)*
+- *JavaScript (ES6+)*
+- *CSS*
+- *HTML*
+- News API
+
+---
+
+## 📸 Screenshots
+
+### 🌞 Light Mode
+<img src="https://github.com/user-attachments/assets/e5bc703e-c487-4adf-9323-85acfe5264be" width="700"/>
+
+### 🌙 Dark Mode
+<img src="https://github.com/user-attachments/assets/6f7cd6a6-433a-4380-bb04-0e73f9fa1b45" width="700"/>
+
+---
+
+ 
+
+---
+
+## 📌 Author
+
+*Shubham Mishra*
 
