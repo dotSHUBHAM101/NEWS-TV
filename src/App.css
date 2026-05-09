@@ -73,31 +73,72 @@
 
 .card-img img { width: 100%; height: 180px; object-fit: cover; }
 
-.card-body { padding: 20px; }
-
-.source-tag {
-  background: #007bff22;
-  color: #007bff;
-  padding: 4px 10px;
-  border-radius: 5px;
-  font-size: 0.7rem;
-  font-weight: bold;
-}
-
 .card-title { font-size: 1.1rem; margin: 10px 0; line-height: 1.4; }
 
 .card-desc { font-size: 0.9rem; opacity: 0.8; margin-bottom: 20px; }
 
-.read-more-btn {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.9rem;
-}
 
 .theme-toggle {
   padding: 8px 16px;
   border-radius: 20px;
   border: 1px solid #8888;
   cursor: pointer;
+}
+
+
+
+.read-more-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white !important;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  margin-top: auto; /* Pushes button to bottom of card */
+}
+
+.read-more-btn:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 250px; /* Gives cards a uniform height */
+}
+
+.card-meta {
+  margin-bottom: 10px;
+}
+
+.source-tag {
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.loader {
+  text-align: center;
+  font-weight: bold;
+  color: #007bff;
+  margin: 40px 0;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
 }

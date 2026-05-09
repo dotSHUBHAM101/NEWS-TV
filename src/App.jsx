@@ -17,10 +17,10 @@ function App() {
 
   const debouncedSearch = useDebounce(searchQuery, 600);
 
-
+  // GNews specific endpoints
   const currentUrl = debouncedSearch 
-    ? `https://gnews.io/api/v4/search?q=${debouncedSearch}&apikey=${API_KEY}`
-    : `https://gnews.io/api/v4/top-headlines?country=${country}&category=${category}&apikey=${API_KEY}`;
+    ? `https://gnews.io/api/v4/search?q=${debouncedSearch}&apikey=${API_KEY}&lang=en`
+    : `https://gnews.io/api/v4/top-headlines?country=${country}&category=${category}&apikey=${API_KEY}&lang=en`;
 
   const { data, loading, error } = useNews(currentUrl);
 
@@ -87,26 +87,32 @@ function App() {
         )}
 
         <div className="content_area">
-          {searchQuery && <p className="search-status">Showing results for: <strong>{searchQuery}</strong></p>}
+          {searchQuery && <p className="search-status">Results for: <strong>{searchQuery}</strong></p>}
           
-          {loading && <div className="loader">Scanning the globe for news...</div>}
-          {error && <p className="error-msg">⚠️ Error: {error}</p>}
+          {loading && <div className="loader">Updating your feed...</div>}
+          
+          {/* We only show the error if we don't have any data to display */}
+          {error && !data && <p className="error-msg">⚠️ {error === "Fetch failed: 429" ? "API Limit Reached (Daily limit is 100)" : error}</p>}
           
           <div className="news_grid">
-            {!loading && data?.articles?.map((article, index) => (
+            {data?.articles?.map((article, index) => (
               <div key={index} className="news_card" style={{ backgroundColor: cardBg }}>
                 <div className="card-img">
                   <img 
-                    src={article.image || 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop'} 
+                    src={article.image || 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80'} 
                     alt="news" 
                   />
                 </div>
                 <div className="card-body">
-                  <span className="source-tag">{article.source?.name || "Unknown"}</span>
-                  <h3 className="card-title">{article.title?.slice(0, 70)}...</h3>
-                  <p className="card-desc">{article.description?.slice(0, 100) || "No description available."}...</p>
+                  <div className="card-meta">
+                    <span className="source-tag">{article.source?.name || "News"}</span>
+                  </div>
+                  <h3 className="card-title" style={{ color: textColor }}>{article.title?.slice(0, 70)}...</h3>
+                  <p className="card-desc" style={{ color: textColor }}>{article.description?.slice(0, 100) || "Read the full story to get the latest updates on this topic."}...</p>
+                  
+                  {/* SLICK BUTTON ADDED HERE */}
                   <a href={article.url} target="_blank" rel="noreferrer" className="read-more-btn">
-                    Read Story →
+                    Read Full Story
                   </a>
                 </div>
               </div>
@@ -116,7 +122,7 @@ function App() {
           {!loading && data?.articles?.length === 0 && (
             <div className="no-results">
               <h3>No results found.</h3>
-              <p>Try different keywords or check your filters.</p>
+              <p>Try different keywords or check your connection.</p>
             </div>
           )}
         </div>
